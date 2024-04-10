@@ -8,13 +8,13 @@ x = dataset.drop(columns=["Age", "Diameter"])
 
 y = dataset["Length"]
 
-"""Split the data into a training set and a testing set."""
+"""Split data into training set and testing set"""
 
 from sklearn.model_selection import train_test_split
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
-"""Build and train the model."""
+"""Build and train"""
 
 import tensorflow as tf
 
@@ -28,6 +28,6 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mean_absolu
 
 model.fit(x_train, y_train, epochs=100)
 
-"""Evaluate the model."""
+"""Evaluate the results"""
 
 model.evaluate(x_test, y_test)
